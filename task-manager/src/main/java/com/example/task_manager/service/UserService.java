@@ -1,7 +1,6 @@
 package com.example.task_manager.service;
 
-
-import com.example.greenshadowbackendspringboot.dto.impl.UserDTO;
+import com.example.task_manager.dto.impl.UserDTO;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;

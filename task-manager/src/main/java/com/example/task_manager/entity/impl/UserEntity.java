@@ -1,7 +1,7 @@
 package com.example.task_manager.entity.impl;
 
-import com.example.greenshadowbackendspringboot.entity.SuperEntity;
-import com.example.greenshadowbackendspringboot.util.Role;
+
+import com.example.task_manager.entity.SuperEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -26,14 +27,18 @@ public class UserEntity implements SuperEntity, UserDetails {
     String email;
     String password;
     @Enumerated(EnumType.STRING)
-    Role userRole;
     boolean status;
 
-    @Override
+    /*@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<GrantedAuthority> authorities = new HashSet<>();
         authorities.add(new SimpleGrantedAuthority("ROLE_"+userRole.name()));
         return authorities;
+    }*/
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
     }
 
     @Override

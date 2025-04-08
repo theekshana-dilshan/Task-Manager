@@ -1,9 +1,9 @@
 package com.example.task_manager.service;
 
 
-import com.example.greenshadowbackendspringboot.dto.impl.UserDTO;
-import com.example.greenshadowbackendspringboot.secure.JWTAuthResponse;
-import com.example.greenshadowbackendspringboot.secure.SignIn;
+import com.example.task_manager.dto.impl.UserDTO;
+import com.example.task_manager.secure.JWTAuthResponse;
+import com.example.task_manager.secure.SignIn;
 
 public interface AuthService {
    JWTAuthResponse signIn(SignIn signIn);

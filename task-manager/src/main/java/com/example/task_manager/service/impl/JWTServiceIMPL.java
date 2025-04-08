@@ -1,6 +1,6 @@
 package com.example.task_manager.service.impl;
 
-import com.example.greenshadowbackendspringboot.service.JWTService;
+import com.example.task_manager.service.JWTService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

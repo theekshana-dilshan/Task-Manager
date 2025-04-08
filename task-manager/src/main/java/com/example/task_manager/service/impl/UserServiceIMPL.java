@@ -1,12 +1,13 @@
 package com.example.task_manager.service.impl;
 
-import com.example.greenshadowbackendspringboot.dao.UserDao;
-import com.example.greenshadowbackendspringboot.dto.impl.UserDTO;
-import com.example.greenshadowbackendspringboot.entity.impl.UserEntity;
-import com.example.greenshadowbackendspringboot.exception.DataPersistException;
-import com.example.greenshadowbackendspringboot.exception.UserNotFoundException;
-import com.example.greenshadowbackendspringboot.service.UserService;
-import com.example.greenshadowbackendspringboot.util.Mapping;
+
+import com.example.task_manager.dao.UserDao;
+import com.example.task_manager.dto.impl.UserDTO;
+import com.example.task_manager.entity.impl.UserEntity;
+import com.example.task_manager.exception.DataPersistException;
+import com.example.task_manager.exception.UserNotFoundException;
+import com.example.task_manager.service.UserService;
+import com.example.task_manager.util.Mapping;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -61,7 +62,6 @@ public class UserServiceIMPL implements UserService {
         if (tempUser.isPresent()){
             tempUser.get().setEmail(userDTO.getEmail());
             tempUser.get().setPassword(userDTO.getPassword());
-            tempUser.get().setUserRole(userDTO.getUserRole());
         }
     }
 

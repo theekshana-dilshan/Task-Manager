@@ -1,7 +1,8 @@
 package com.example.task_manager.config;
 
-import com.example.greenshadowbackendspringboot.service.JWTService;
-import com.example.greenshadowbackendspringboot.service.UserService;
+
+import com.example.task_manager.service.JWTService;
+import com.example.task_manager.service.UserService;
 import io.micrometer.common.util.StringUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,12 +1,12 @@
 package com.example.task_manager.controller;
 
-import com.example.greenshadowbackendspringboot.dto.impl.UserDTO;
-import com.example.greenshadowbackendspringboot.exception.DataPersistException;
-import com.example.greenshadowbackendspringboot.secure.JWTAuthResponse;
-import com.example.greenshadowbackendspringboot.secure.SignIn;
-import com.example.greenshadowbackendspringboot.service.AuthService;
-import com.example.greenshadowbackendspringboot.service.UserService;
-import com.example.greenshadowbackendspringboot.util.Role;
+
+import com.example.task_manager.dto.impl.UserDTO;
+import com.example.task_manager.exception.DataPersistException;
+import com.example.task_manager.secure.JWTAuthResponse;
+import com.example.task_manager.secure.SignIn;
+import com.example.task_manager.service.AuthService;
+import com.example.task_manager.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,7 +33,6 @@ public class AuthUserController {
             UserDTO buildUserDTO = new UserDTO();
             buildUserDTO.setEmail(email);
             buildUserDTO.setPassword(passwordEncoder.encode(password));
-            buildUserDTO.setUserRole(Role.valueOf(role));
             return ResponseEntity.ok(authService.signUp(buildUserDTO));
         } catch (DataPersistException e) {
             e.printStackTrace();

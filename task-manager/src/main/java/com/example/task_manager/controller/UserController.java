@@ -1,9 +1,9 @@
 package com.example.task_manager.controller;
 
-import com.example.greenshadowbackendspringboot.dto.impl.UserDTO;
-import com.example.greenshadowbackendspringboot.exception.UserNotFoundException;
-import com.example.greenshadowbackendspringboot.service.UserService;
-import com.example.greenshadowbackendspringboot.util.RegexProcess;
+import com.example.task_manager.dto.impl.UserDTO;
+import com.example.task_manager.exception.UserNotFoundException;
+import com.example.task_manager.service.UserService;
+import com.example.task_manager.util.RegexProcess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
