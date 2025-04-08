@@ -46,7 +46,6 @@ public class UserController {
 
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    @PreAuthorize("hasRole('ADMINISTRATIVE')")
     public List<UserDTO> getAllUsers(){
         return userService.getAllUsers();
     }

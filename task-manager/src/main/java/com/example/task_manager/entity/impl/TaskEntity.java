@@ -1,7 +1,7 @@
-package com.example.task_manager.dto.impl;
+package com.example.task_manager.entity.impl;
 
-import com.example.task_manager.dto.CustomStatus;
-import com.example.task_manager.dto.SuperDTO;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,9 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TaskDTO implements CustomStatus {
+@Entity
+public class TaskEntity {
+    @Id
     private Long id;
     private String title;
     private String description;

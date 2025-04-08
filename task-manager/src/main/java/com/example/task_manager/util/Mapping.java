@@ -14,6 +14,15 @@ public class Mapping {
     @Autowired
     private ModelMapper modelMapper;
 
+    public TaskEntity toTaskEntity(TaskDTO taskDTO) {
+        return modelMapper.map(taskDTO, TaskEntity.class);
+    }
+    public TaskDTO toTaskDTO(TaskEntity taskEntity) {
+        return modelMapper.map(taskEntity, TaskDTO.class);
+    }
+    public List<TaskDTO> asTaskDTOList(List<TaskEntity> taskEntities) {
+        return modelMapper.map(taskEntities, new TypeToken<List<TaskDTO>>() {}.getType());
+    }
 
     public UserEntity toUserEntity(UserDTO userDTO) {
         return modelMapper.map(userDTO, UserEntity.class);

@@ -4,10 +4,10 @@ import java.util.regex.Pattern;
 
 public class RegexProcess {
 
-    public static boolean vehicleIdMatcher(String vehicleCode) {
-        String regexForVehicleID = "^VEHICLE-\\d{4}$";
+    public static boolean taskIdMatcher(String taskId) {
+        String regexForVehicleID = "^T-\\d{4}$";
         Pattern regexPattern = Pattern.compile(regexForVehicleID);
-        return regexPattern.matcher(vehicleCode).matches();
+        return regexPattern.matcher(taskId).matches();
     }
 
     public static boolean userEmailMatcher(String email) {
