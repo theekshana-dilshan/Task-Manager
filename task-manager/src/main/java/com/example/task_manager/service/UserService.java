@@ -12,5 +12,4 @@ public interface UserService {
     void deleteUser(String email);
     void updateUser(String email, UserDTO userDTO);
     UserDetailsService userDetailsService();
-    UserDTO getActiveUsers();
 }

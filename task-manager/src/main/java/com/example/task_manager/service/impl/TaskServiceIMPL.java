@@ -49,7 +49,7 @@ public class TaskServiceIMPL implements TaskService {
             var selectedUser = taskDao.getReferenceById(taskId);
             return taskMapping.toTaskDTO(selectedUser);
         }else {
-            return new SelectedErrorStatus(2,"Selected task not found");
+            return new SelectedErrorStatus(2,"Selected task not found "+taskId);
         }
     }
 

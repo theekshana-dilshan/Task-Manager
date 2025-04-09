@@ -69,9 +69,4 @@ public class UserServiceIMPL implements UserService {
     public UserDetailsService userDetailsService() {
         return    userName-> userDao.findByEmail(userName).orElseThrow(()-> new UserNotFoundException("User not found"));
     }
-
-    @Override
-    public UserDTO getActiveUsers() {
-        return mapping.toUserDTO(userDao.findByStatusTrue());
-    }
 }

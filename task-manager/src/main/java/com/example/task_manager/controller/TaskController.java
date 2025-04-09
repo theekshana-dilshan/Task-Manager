@@ -42,7 +42,7 @@ public class TaskController {
     @GetMapping(value = "/{taskId}",produces = MediaType.APPLICATION_JSON_VALUE)
     public CustomStatus getSelectedTask(@PathVariable("taskId") String taskId){
         if (!RegexProcess.taskIdMatcher(taskId)) {
-            return new SelectedErrorStatus(1,"Task ID is not valid");
+            return new SelectedErrorStatus(1,"Task ID is not valid"+taskId);
         }
         return taskService.getTask(taskId);
     }

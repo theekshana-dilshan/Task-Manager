@@ -26,19 +26,11 @@ public class UserEntity implements SuperEntity, UserDetails {
     @Id
     String email;
     String password;
-    @Enumerated(EnumType.STRING)
-    boolean status;
-
-    /*@Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        Set<GrantedAuthority> authorities = new HashSet<>();
-        authorities.add(new SimpleGrantedAuthority("ROLE_"+userRole.name()));
-        return authorities;
-    }*/
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        return authorities;
     }
 
     @Override

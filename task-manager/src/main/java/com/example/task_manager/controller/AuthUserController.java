@@ -22,17 +22,12 @@ public class AuthUserController {
     private final UserService userService;
     private final AuthService authService;
     private final PasswordEncoder passwordEncoder;
-    @PostMapping(value = "signup", consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<JWTAuthResponse> saveUser(
-            @RequestPart("email") String email,
-            @RequestPart("password") String password
-    ) {
+
+    @PostMapping(value = "signup", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<JWTAuthResponse> saveUser(@RequestBody UserDTO userDTO) {
         try {
-            UserDTO buildUserDTO = new UserDTO();
-            buildUserDTO.setEmail(email);
-            buildUserDTO.setPassword(passwordEncoder.encode(password));
-            return ResponseEntity.ok(authService.signUp(buildUserDTO));
+            userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+            return ResponseEntity.ok(authService.signUp(userDTO));
         } catch (DataPersistException e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -41,14 +36,15 @@ public class AuthUserController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+
     @PostMapping(value = "signin",consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<JWTAuthResponse> signIn(@RequestBody SignIn signIn){
        return ResponseEntity.ok(authService.signIn(signIn));
     }
+
     @PostMapping("refresh")
     public ResponseEntity<JWTAuthResponse> refreshToken(@RequestParam ("existingToken") String existingToken) {
         return ResponseEntity.ok(authService.refreshToken(existingToken));
     }
-
-
 }
