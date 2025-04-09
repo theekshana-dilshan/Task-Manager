@@ -26,8 +26,7 @@ public class AuthUserController {
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<JWTAuthResponse> saveUser(
             @RequestPart("email") String email,
-            @RequestPart("password") String password,
-            @RequestPart("role") String role
+            @RequestPart("password") String password
     ) {
         try {
             UserDTO buildUserDTO = new UserDTO();
