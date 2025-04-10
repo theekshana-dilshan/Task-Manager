@@ -1,0 +1,36 @@
+<div class="form-container">
+    <mat-card>
+      <mat-card-title>{{ isEditMode ? 'Edit Task' : 'Create New Task' }}</mat-card-title>
+      
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" placeholder="Task title">
+          <mat-error *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched">
+            Title is required
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" placeholder="Task description" rows="4"></textarea>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status">
+            <mat-option value="TO_DO">To Do</mat-option>
+            <mat-option value="IN_PROGRESS">In Progress</mat-option>
+            <mat-option value="DONE">Done</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <div class="form-actions">
+          <button mat-button type="button" routerLink="/tasks">Cancel</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">
+            {{ isEditMode ? 'Update' : 'Create' }}
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </div>

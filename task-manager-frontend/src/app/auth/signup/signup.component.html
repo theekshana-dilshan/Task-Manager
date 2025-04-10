@@ -1,0 +1,32 @@
+<div class="signup-container">
+  <div class="left-panel">
+    <h1>Task Manager</h1>
+    <p>Create an account to organize your tasks and stay productive!</p>
+  </div>
+
+  <div class="right-panel">
+    <h2><span>Welcome!</span><br />Let's Get Started</h2>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+      <h3>Create your account</h3>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+
+      <div *ngIf="error" class="error">{{ error }}</div>
+
+      <div class="actions">
+        <button class="button" mat-raised-button color="primary" type="submit">Sign Up</button>
+      </div>
+
+      <p class="have-account" (click)="goToSignin()">Already have an account? Sign In</p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+.task-list-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-actions {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .task-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .no-tasks {
+    text-align: center;
+    margin-top: 2rem;
+    color: #757575;
+  }
+
+  .loading {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+    
+    .task-card.skeleton {
+      height: 200px;
+      background-color: #f0f0f0;
+      animation: pulse 1.5s infinite ease-in-out;
+      border-radius: 8px;
+    }
+  }
+
+  .button {
+    background-color: #7e5bef;
+    color: white;
+    transition: background-color 0.3s ease;
+    border-radius: 10%;
+  
+    &:hover {
+      background-color: #6b46c1;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      background-color: #f0f0f0;
+    }
+    50% {
+      background-color: #e0e0e0;
+    }
+    100% {
+      background-color: #f0f0f0;
+    }
+  }
+
+  .select-status .mat-form-field-underline {
+    display: none;
+  }
+}

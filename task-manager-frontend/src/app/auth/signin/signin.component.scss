@@ -1,0 +1,113 @@
+.signin-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.left-panel {
+  flex: 1;
+  background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+
+  img {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0.9;
+  }
+}
+
+.right-panel {
+  flex: 1;
+  background: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+
+    span {
+      color: #6a11cb;
+    }
+  }
+
+  .signin-form {
+    width: 100%;
+    max-width: 400px;
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .full-width {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+
+      .forgot {
+        font-size: 0.9rem;
+        color: #6a11cb;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      button {
+        padding: 10px 25px;
+        font-weight: bold;
+      }
+    }
+
+    .create {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #6a11cb;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .button {
+      background-color: #7e5bef;
+      color: white;
+      transition: background-color 0.3s ease;
+      border-radius: 10%;
+    
+      &:hover {
+        background-color: #6b46c1;
+      }
+    }
+  }
+}

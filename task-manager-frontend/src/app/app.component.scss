@@ -1,0 +1,23 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    color: white;
+  }
+  
+  .button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  button {
+    font-weight: bold;
+    padding: 10px 20px;
+  }

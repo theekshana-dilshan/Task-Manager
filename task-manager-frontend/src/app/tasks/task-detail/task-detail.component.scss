@@ -1,0 +1,32 @@
+.task-detail-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .loading, .error {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .error {
+    color: #f44336;
+  }
+  
+  .description {
+    white-space: pre-line;
+    margin: 1.5rem 0;
+  }
+  
+  .status-todo {
+    background-color: #e0e0e0;
+  }
+  
+  .status-progress {
+    background-color: #ffca28;
+  }
+  
+  .status-done {
+    background-color: #66bb6a;
+    color: white;
+  }

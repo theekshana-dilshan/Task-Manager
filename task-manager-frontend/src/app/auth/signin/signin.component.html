@@ -1,0 +1,34 @@
+<div class="signin-container">
+  <div class="left-panel">
+    <h1>Task Manager</h1>
+
+    <p>Login your Account to get full User Experience</p>
+  </div>
+
+  <div class="right-panel">
+    <h2><span>Hello!</span></h2>
+
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" class="signin-form">
+      <h3>Login your account</h3>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+
+      <div *ngIf="error" class="error">{{ error }}</div>
+
+      <div class="actions">
+        <a class="forgot" href="#">Forgot password?</a>
+        <button class="button" mat-raised-button color="primary" type="submit">Login</button>
+      </div>
+
+      <p class="create" (click)="goToSignup()">Create Account</p>
+    </form>
+  </div>
+</div>
